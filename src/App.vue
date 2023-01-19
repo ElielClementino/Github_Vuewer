@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
+        <v-app-bar
       app
       color="primary"
       dark
@@ -36,21 +36,20 @@
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
-
     <v-main>
-      <HelloWorld/>
+      <github-vuewer/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import GithubVuewer from './components/GithubVuewer';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    GithubVuewer,
   },
 
   data: () => ({
