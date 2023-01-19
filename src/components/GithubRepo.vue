@@ -32,10 +32,18 @@ export default {
         },
         getUsers () {
             this.loading = true
-            console.log(this.search)
             setTimeout(() => {
-                this.userList = ["Apple", "Orange", "Grape", "Strawberry"]
-                this.loading = false
+                return new Promise((resolve, reject) => {
+                    fetch(`https://api.github.com/search/users?q=${this.search}`).then((response) =>{
+                        return response.json()
+                    }).then((data) => {
+                        this.userList = data.items.map((idx) => [idx.login])
+                        return resolve(data)
+                    }).catch((error) => {
+                        return reject(error)
+                    })
+                    this.loading = false
+                })
             }, 2000)
             
         }
