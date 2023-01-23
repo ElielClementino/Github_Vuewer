@@ -11,12 +11,13 @@
 
 <script>
 import debounce from 'lodash/debounce'
+import api from "../api/api"
 export default {
     name: 'GithubRepo',
     data () {
         return {
             user: null,
-            userList: {},
+            userList: [],
             loading: false,
             search: null
         }
@@ -24,17 +25,10 @@ export default {
     methods: {
         getUsers () {
             this.loading = true
-            return new Promise((resolve, reject) => {
-                fetch(`https://api.github.com/search/users?q=${this.search}`).then((response) =>{
-                    return response.json()
-                }).then((data) => {
-                    this.userList = data.items.map((idx) => [idx.login])
-                    return resolve(data)
-                }).catch((error) => {
-                    return reject(error)
-                })
-                this.loading = false
+            api.getUser(this.search).then((data) => {
+                this.userList = data.items.map((idx) => [idx.login])
             })
+            this.loading = false
         },
     },
     watch: {

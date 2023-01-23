@@ -1,11 +1,14 @@
-import axios from 'axios'
+import axios from "axios"
 
-export function get (url) {
-    axios.get(url).then((response) => {
-        return response.json()
-    }).then((data) => {
-        return data
-    }).catch((error) => {
-        return error
-    })
+export default {
+    async getUser (user) {
+        try {
+            const result = await axios.get(`https://api.github.com/search/users?q=${user}`).then((response) => {
+                return response.json()
+            })
+            return result
+        } catch (error){
+            console.error(error)
+        }
+    }
 }
