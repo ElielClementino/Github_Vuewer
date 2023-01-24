@@ -20,6 +20,15 @@ export default {
         })
         return result
     },
+    async getFolders (full_name, path) {
+        if (!path) {
+            path = ''
+        }
+        const result = await fetch(`https://api.github.com/repos/${full_name}/contents/${path}`).then((response) => {
+            return response.json()
+        })
+        return result
+    },
     async getRepos (user, page) {
         if (!page) {
             page = 1
