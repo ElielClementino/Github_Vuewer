@@ -4,6 +4,7 @@
         <v-col cols="12">
             <v-autocomplete
             v-model="user"
+            label="Digite o nome do usuario"
             :items="userList"
             :loading="usersLoading"
             item-text="login"

@@ -6,7 +6,7 @@
       dark
     >
       <div class="d-flex align-center">
-        <v-card-title>Git Hub</v-card-title>
+        <h1>Git Hub</h1>
       </div>
 
       <v-spacer></v-spacer>
