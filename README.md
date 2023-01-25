@@ -2,6 +2,7 @@
 
 ## Project setup
 ```
+Node version used for this project -> v14.20.0
 npm install
 ```
 
