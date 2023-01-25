@@ -9,7 +9,17 @@
             :loading="usersLoading"
             item-text="login"
             :search-input.sync="search"
-            />
+            >
+            <template v-slot:item="data">
+            <v-list-item-avatar>
+                <v-img :src="data.item.avatar_url"></v-img>
+            </v-list-item-avatar>
+            <v-list-item-content>
+                <v-list-item-title v-html="data.item.login"></v-list-item-title>
+                <v-list-item-subtitle v-html="data.item.id"></v-list-item-subtitle>
+            </v-list-item-content>
+          </template>
+            </v-autocomplete>
         </v-col>
     </v-row>
     <div
