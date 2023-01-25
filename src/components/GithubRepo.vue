@@ -104,6 +104,7 @@
                         active-class="deep-purple accent-4 white--text"
                         column
                     >
+                        <v-card-title>Caminho atual:{{ path }}</v-card-title>
                         <v-chip 
                         v-for="folder in  selectedFolder "
                         :key=folder.id
@@ -113,7 +114,6 @@
                             {{ folder?.name }}
                         </v-chip>
                     </v-chip-group>
-                    <v-card-title>Caminho atual:{{ selectedFolder[chosenFolderPath]?.path }}</v-card-title>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -145,7 +145,8 @@ export default {
             search: null,
             reposList: [],
             selection: null,
-            folderSelection: null
+            folderSelection: null,
+            path: null
         }
     },
     methods: {
@@ -220,7 +221,8 @@ export default {
             }
         },
         chosenFolderPath () {
-            if (this.chosenFolderPath && this.selectedFolder[this.chosenFolderPath]?.type === "dir") {
+            this.path = this.selectedFolder[this.chosenFolderPath]?.path
+            if (this.selectedFolder[this.chosenFolderPath]?.type === "dir"){
                 this.getSelectedFolder(this.selectedFolder[this.chosenFolderPath]?.path)
             }
         }
