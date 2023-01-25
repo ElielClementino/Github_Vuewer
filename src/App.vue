@@ -2,11 +2,12 @@
   <v-app>
         <v-app-bar
       app
-      color="primary"
+      color="black"
       dark
     >
       <div class="d-flex align-center">
-        <h1>Git Hub</h1>
+        <h1>Git Hub Api</h1>
+        <v-icon size=50>mdi-github</v-icon>
       </div>
 
       <v-spacer></v-spacer>
