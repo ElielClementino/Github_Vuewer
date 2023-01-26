@@ -3,6 +3,7 @@
     <v-row class="text-center">
         <v-col cols="12">
             <v-autocomplete
+            id="search"
             v-model="user"
             label="Digite o nome do usuario"
             :items="userList"
@@ -55,6 +56,7 @@
                         <v-chip 
                         v-for="repo in reposList"
                         :key=repo.id
+                        href="#search"
                         >
                             <v-icon>mdi-folder</v-icon> {{ repo?.full_name }}
                         </v-chip>
