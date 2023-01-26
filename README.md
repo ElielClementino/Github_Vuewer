@@ -1,4 +1,6 @@
 # github_vuewer
+[peekOK3IZ1.webm](https://user-images.githubusercontent.com/94757087/214728586-c1887c97-8aa6-46e4-a574-904dd8a3acbf.webm)
+Site url -> https://elielclementino.github.io/github_vuewer/
 
 ## Project setup
 ```
